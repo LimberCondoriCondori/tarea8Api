@@ -39,6 +39,7 @@ router.get('/user',async(req,res, next) => {
   if (params.skip != null) {
     skip = parseInt(params.skip);
   }
+  //
   var list = await USER.find(filter).limit(limit).sort({_id: order}).skip(skip);
   res.status(200).json(list);
 });
